@@ -1,6 +1,3 @@
--- Schema lightbnb
--- DROP SCHEMA IF EXISTS lightbnb;
--- Schema lightbnb
 -- CREATE DATABASE IF NOT EXISTS lightbnb DEFAULT CHARACTER SET utf8;
 USE lightbnb;
 -- 
