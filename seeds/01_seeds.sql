@@ -11,10 +11,10 @@ VALUES (1, 1, 'Speed Lamp', 'description', 'http://images.pexels.com/photos/2121
 (3, 3, 'Another Place', 'description', 'http://images.pexels.com/photos/2121121/pexels-photo2121121.jpeg', 'http://images.pexels.com/photos/2121121/pexels-photo2121121.jpeg', 9300, 5, 4, 3, 'Canada', '123 Avenue', 'Kelowna', 'British Columbia', 98765, true);
 
 
-INSERT INTO reservations (guest_id, property_id, start_date, end_date) 
-VALUES (1, 1, '2018-09-11', '2018-09-26'),
-(2, 2, '2019-01-04', '2019-02-01'),
-(3, 3, '2021-10-01', '2021-10-14');
+INSERT INTO reservations (id, guest_id, property_id, start_date, end_date) 
+VALUES (1, 1, 1, '2022-01-01', '2022-01-06'),
+(2, 2, 2, '2022-01-01', '2022-01-06'),
+(3, 3, 3, '2022-01-01', '2021-10-14');
 
 INSERT INTO property_reviews (guest_id, property_id, reservation_id, rating, message)
 VALUES (2, 2, 3, 3, 'message'),
