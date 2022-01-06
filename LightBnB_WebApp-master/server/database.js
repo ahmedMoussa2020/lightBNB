@@ -97,17 +97,18 @@ exports.addUser = addUser;
   queryString = '';
   queryParams = [];
   queryString = `
-SELECT r.*,
-p.*,
-AVG(pr.rating)
-FROM reservations r
-JOIN properties p ON r.property_id = p.id
-JOIN property_reviews pr ON pr.property_id = p.id
-WHERE r.guest_id = $1
-AND r.end_date < now()
-GROUP BY r.id, p.id
-ORDER BY start_date ASC
-LIMIT $2;`;
+  SELECT r.*,
+  p.*,
+  AVG(pr.rating)
+  FROM reservations r
+  JOIN properties p ON r.property_id = p.id
+  JOIN property_reviews pr ON pr.property_id = p.id
+  WHERE r.guest_id = $1
+  AND r.end_date < now()
+  GROUP BY r.id, p.id
+
+  ORDER BY start_date ASC
+  LIMIT $2;`;
 
   queryParams = [guest_id, limit];
   return pool.query(queryString, queryParams)
@@ -132,7 +133,7 @@ exports.getAllReservations = getAllReservations;
   queryParams = [];
   queryString = `SELECT p.*,
   ROUND(AVG(pr.rating)) AS average_rating
-FROM properties p
+  FROM properties p
   JOIN property_reviews pr ON property_id = p.id `;
 
   if (options.city) {
@@ -186,7 +187,7 @@ FROM properties p
       return Promise.resolve(data.rows);
     });
 };
-exports.getAllProperties = getAllProperties;
+  exports.getAllProperties = getAllProperties;
 
 
 /**
@@ -225,7 +226,7 @@ exports.getAllProperties = getAllProperties;
       return Promise.reject(e);
     });
 };
-exports.addProperty = addProperty;
+  exports.addProperty = addProperty;
 
 /**
  * Add a reservation to the database
